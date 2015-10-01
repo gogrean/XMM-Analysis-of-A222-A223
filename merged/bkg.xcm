@@ -226,44 +226,38 @@ model gauss+gauss+const*const*(gauss+gauss+apec+(apec+apec+pow+apec)*phabs)
 =33
 
 
-model 2:m1soft1 const*pow
-120.979      -0.01          0          0      1e+10      1e+10
+model 2:m1soft1 pow
 1.5           0.01         -3         -2          9         10
 1e-3          0.01          0          0      1e+24      1e+24
 
-model 3:m2soft1 const*pow
-164.686      -0.01          0          0      1e+10      1e+10
+model 3:m2soft1 pow
+= m1soft1:1
 = m1soft1:2
-= m1soft1:3
 
-model 4:pnsoft1 const*pow
-156.228      -0.01          0          0      1e+10      1e+10
+model 4:pnsoft1 pow
+= m1soft1:1
 = m1soft1:2
-= m1soft1:3
 
-model 5:m1soft2 const*pow
-57.110       -0.01          0          0      1e+10      1e+10
-= m1soft1:2
+model 5:m1soft2 pow
+= m1soft1:1
 1e-3          0.01          0          0      1e+24      1e+24
 
-model 6:m2soft2 const*pow
-133.743      -0.01          0          0      1e+10      1e+10
-= m1soft1:2
-= m1soft2:3
+model 6:m2soft2 pow
+= m1soft1:1
+= m1soft2:2
 
-model 7:pnsoft2 const*pow
-106.003      -0.01          0          0      1e+10      1e+10
-= m1soft1:2
-= m1soft2:3
+model 7:pnsoft2 pow
+= m1soft1:1
+= m1soft2:2
 
 
 renorm
 fit 1000 1e-2
 
 error 2.706 18,19,22,28,127
+error 2.706 m1soft1:1
 error 2.706 m1soft1:2
-error 2.706 m1soft1:3
-error 2.706 m1soft2:3
+error 2.706 m1soft2:2
 
 sho fre
 
