@@ -440,15 +440,16 @@
 # Null hypothesis probability =   0.000000e+00
 # Current data and model not fit yet.
 #
-!XSPEC12>model 2:m1soft1 pow  ;  1.5           0.01         -3         -2          9         10  ;  1e-3          0.01          0          0      1e+24      1e+24;
+!XSPEC12>model 2:m1soft1 con*pow  ;  1.0          -0.01         -3         -2          9         10  ;  1.5           0.01         -3         -2          9         10  ;  1e-3          0.01          0          0      1e+24      1e+24;
 #
 #========================================================================
-#Model m1soft1:powerlaw<1> Source No.: 2   Active/On
+#Model m1soft1:constant<1>*powerlaw<2> Source No.: 2   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 1
-#   1    1   powerlaw   PhoIndex            1.50000      +/-  0.0          
-#   2    1   powerlaw   norm                1.00000E-03  +/-  0.0          
+#   1    1   constant   factor              1.00000      frozen
+#   2    2   powerlaw   PhoIndex            1.50000      +/-  0.0          
+#   3    2   powerlaw   norm                1.00000E-03  +/-  0.0          
 #________________________________________________________________________
 #
 #
@@ -459,147 +460,154 @@
 # Null hypothesis probability =   0.000000e+00
 # Current data and model not fit yet.
 #
-!XSPEC12>model 3:m2soft1 pow  ;  = m1soft1:1  ;  = m1soft1:2;
+!XSPEC12>model 3:m2soft1 con*pow  ;  1.30577      -0.01         -3         -2          9         10  ;  = m1soft1:2  ;  = m1soft1:3;
 #
 #========================================================================
-#Model m2soft1:powerlaw<1> Source No.: 3   Active/On
+#Model m2soft1:constant<1>*powerlaw<2> Source No.: 3   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 2
-#   1    1   powerlaw   PhoIndex            1.50000      = m1soft1:1
-#   2    1   powerlaw   norm                1.00000E-03  = m1soft1:2
+#   1    1   constant   factor              1.30577      frozen
+#   2    2   powerlaw   PhoIndex            1.50000      = m1soft1:2
+#   3    2   powerlaw   norm                1.00000E-03  = m1soft1:3
 #________________________________________________________________________
 #
 #
-#Fit statistic : Chi-Squared =       38260.17 using 986 PHA bins.
+#Fit statistic : Chi-Squared =       38290.52 using 986 PHA bins.
 #
-#Test statistic : Chi-Squared =       38260.17 using 986 PHA bins.
-# Reduced chi-squared =       39.08087 for    979 degrees of freedom 
+#Test statistic : Chi-Squared =       38290.52 using 986 PHA bins.
+# Reduced chi-squared =       39.11187 for    979 degrees of freedom 
 # Null hypothesis probability =   0.000000e+00
 # Current data and model not fit yet.
 #
-!XSPEC12>model 4:pnsoft1 pow  ;  = m1soft1:1  ;  = m1soft1:2;
+!XSPEC12>model 4:pnsoft1 con*pow  ;  1.34652      -0.01         -3         -2          9         10  ;  = m1soft1:2  ;  = m1soft1:3;
 #
 #========================================================================
-#Model pnsoft1:powerlaw<1> Source No.: 4   Active/On
+#Model pnsoft1:constant<1>*powerlaw<2> Source No.: 4   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 3
-#   1    1   powerlaw   PhoIndex            1.50000      = m1soft1:1
-#   2    1   powerlaw   norm                1.00000E-03  = m1soft1:2
+#   1    1   constant   factor              1.34652      frozen
+#   2    2   powerlaw   PhoIndex            1.50000      = m1soft1:2
+#   3    2   powerlaw   norm                1.00000E-03  = m1soft1:3
 #________________________________________________________________________
 #
 #
-#Fit statistic : Chi-Squared =       38331.14 using 986 PHA bins.
+#Fit statistic : Chi-Squared =       38386.15 using 986 PHA bins.
 #
-#Test statistic : Chi-Squared =       38331.14 using 986 PHA bins.
-# Reduced chi-squared =       39.15336 for    979 degrees of freedom 
+#Test statistic : Chi-Squared =       38386.15 using 986 PHA bins.
+# Reduced chi-squared =       39.20955 for    979 degrees of freedom 
 # Null hypothesis probability =   0.000000e+00
 # Current data and model not fit yet.
 #
-!XSPEC12>model 5:m1soft2 pow  ;  = m1soft1:1  ;  1e-3          0.01          0          0      1e+24      1e+24;
+!XSPEC12>model 5:m1soft2 con*pow  ;  0.49291      -0.01         -3         -2          9         10  ;  = m1soft1:2  ;  1e-3          0.01          0          0      1e+24      1e+24;
 #
 #========================================================================
-#Model m1soft2:powerlaw<1> Source No.: 5   Active/On
+#Model m1soft2:constant<1>*powerlaw<2> Source No.: 5   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 4
-#   1    1   powerlaw   PhoIndex            1.50000      = m1soft1:1
-#   2    1   powerlaw   norm                1.00000E-03  +/-  0.0          
+#   1    1   constant   factor              0.492910     frozen
+#   2    2   powerlaw   PhoIndex            1.50000      = m1soft1:2
+#   3    2   powerlaw   norm                1.00000E-03  +/-  0.0          
 #________________________________________________________________________
 #
 #
-#Fit statistic : Chi-Squared =       38389.30 using 986 PHA bins.
+#Fit statistic : Chi-Squared =       38414.48 using 986 PHA bins.
 #
-#Test statistic : Chi-Squared =       38389.30 using 986 PHA bins.
-# Reduced chi-squared =       39.25286 for    978 degrees of freedom 
+#Test statistic : Chi-Squared =       38414.48 using 986 PHA bins.
+# Reduced chi-squared =       39.27861 for    978 degrees of freedom 
 # Null hypothesis probability =   0.000000e+00
 # Current data and model not fit yet.
 #
-!XSPEC12>model 6:m2soft2 pow  ;  = m1soft1:1  ;  = m1soft2:2;
+!XSPEC12>model 6:m2soft2 con*pow  ;  1.03709      -0.01         -3         -2          9         10  ;  = m1soft1:2  ;  = m1soft2:3;
 #
 #========================================================================
-#Model m2soft2:powerlaw<1> Source No.: 6   Active/On
+#Model m2soft2:constant<1>*powerlaw<2> Source No.: 6   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 5
-#   1    1   powerlaw   PhoIndex            1.50000      = m1soft1:1
-#   2    1   powerlaw   norm                1.00000E-03  = m1soft2:2
+#   1    1   constant   factor              1.03709      frozen
+#   2    2   powerlaw   PhoIndex            1.50000      = m1soft1:2
+#   3    2   powerlaw   norm                1.00000E-03  = m1soft2:3
 #________________________________________________________________________
 #
 #
-#Fit statistic : Chi-Squared =       38438.63 using 986 PHA bins.
+#Fit statistic : Chi-Squared =       38465.67 using 986 PHA bins.
 #
-#Test statistic : Chi-Squared =       38438.63 using 986 PHA bins.
-# Reduced chi-squared =       39.30331 for    978 degrees of freedom 
+#Test statistic : Chi-Squared =       38465.67 using 986 PHA bins.
+# Reduced chi-squared =       39.33095 for    978 degrees of freedom 
 # Null hypothesis probability =   0.000000e+00
 # Current data and model not fit yet.
 #
-!XSPEC12>model 7:pnsoft2 pow  ;  = m1soft1:1  ;  = m1soft2:2;
+!XSPEC12>model 7:pnsoft2 con*pow  ;  0.93936      -0.01         -3         -2          9         10  ;  = m1soft1:2  ;  = m1soft2:3;
 #
 #========================================================================
-#Model pnsoft2:powerlaw<1> Source No.: 7   Active/On
+#Model pnsoft2:constant<1>*powerlaw<2> Source No.: 7   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 6
-#   1    1   powerlaw   PhoIndex            1.50000      = m1soft1:1
-#   2    1   powerlaw   norm                1.00000E-03  = m1soft2:2
+#   1    1   constant   factor              0.939360     frozen
+#   2    2   powerlaw   PhoIndex            1.50000      = m1soft1:2
+#   3    2   powerlaw   norm                1.00000E-03  = m1soft2:3
 #________________________________________________________________________
 #
 #
-#Fit statistic : Chi-Squared =       38491.70 using 986 PHA bins.
+#Fit statistic : Chi-Squared =       38515.52 using 986 PHA bins.
 #
-#Test statistic : Chi-Squared =       38491.70 using 986 PHA bins.
-# Reduced chi-squared =       39.35757 for    978 degrees of freedom 
+#Test statistic : Chi-Squared =       38515.52 using 986 PHA bins.
+# Reduced chi-squared =       39.38192 for    978 degrees of freedom 
 # Null hypothesis probability =   0.000000e+00
 # Current data and model not fit yet.
 #
 !XSPEC12>renorm;
 #
-#Fit statistic : Chi-Squared =        1896.03 using 986 PHA bins.
+#Fit statistic : Chi-Squared =        1895.53 using 986 PHA bins.
 #
-#Test statistic : Chi-Squared =        1896.03 using 986 PHA bins.
-# Reduced chi-squared =        1.93868 for    978 degrees of freedom 
-# Null hypothesis probability =   3.349165e-61
+#Test statistic : Chi-Squared =        1895.53 using 986 PHA bins.
+# Reduced chi-squared =        1.93817 for    978 degrees of freedom 
+# Null hypothesis probability =   3.780887e-61
 # Current data and model not fit yet.
 #
 !XSPEC12>fit 1000 1e-2;
 #                                   Parameters
-#Chi-Squared  |beta|/N    Lvl       18:norm         19:kT       22:norm       28:norm      127:norm m1soft1:1:Pho m1soft1:2:nor m1soft2:2:nor
-#1874.15      9.23925e+07   1   1.25693e-07      0.200080   9.13376e-07   1.87503e-07   9.51316e-08      0.896821   0.000275866   0.000237470
-#1849.41      9.09571e+07   1   1.02033e-07      0.200155   9.12383e-07   1.92041e-07   9.87508e-08      0.632270   0.000385743   0.000299512
-#1593.94      8.93264e+07   0   4.48086e-08      0.200579   9.01308e-07   2.30484e-07   1.29673e-07     -0.429194    0.00116565   0.000722282
-#1356.26      6.82559e+07   0   7.44233e-09      0.199134   8.18742e-07   4.24498e-07   2.97012e-07     -0.373267    0.00136326   0.000768980
-#1137.73      4.53705e+07  -1   2.64205e-09      0.187544   6.08799e-07   7.56724e-07   6.11388e-07   -0.00865362    0.00162889   0.000821225
-#1096.04      1.9904e+07   -2   2.73122e-06      0.202607   2.53264e-07   7.37605e-07   6.27189e-07       1.27282    0.00470054    0.00223647
-#1086.77      1.05253e+07  -2   3.90029e-06      0.242384   1.16823e-07   7.07788e-07   5.96189e-07      0.911588    0.00712620    0.00394476
-#1075.7       1.64722e+07  -3   4.23804e-06      0.297972   1.46757e-07   6.75909e-07   5.79268e-07       1.01087    0.00728777    0.00371827
-#1075.16      1.24686e+06  -4   4.04860e-06      0.275245   1.57510e-07   6.78850e-07   5.77918e-07       1.01544    0.00721430    0.00375442
-#1075.16      286591       -5   4.04750e-06      0.276752   1.57433e-07   6.79010e-07   5.77874e-07       1.01634    0.00721444    0.00375923
+#Chi-Squared  |beta|/N    Lvl       18:norm         19:kT       22:norm       28:norm      127:norm m1soft1:2:Pho m1soft1:3:nor m1soft2:3:nor
+#1871.93      9.22971e+07   1   1.25658e-07      0.200080   9.13228e-07   1.87462e-07   9.51261e-08      0.846805   0.000264068   0.000268331
+#1845.65      9.0762e+07    1   1.01987e-07      0.200155   9.12234e-07   1.91981e-07   9.87471e-08      0.585228   0.000358095   0.000361809
+#1583.56      8.9038e+07    0   4.47368e-08      0.200575   9.01141e-07   2.30104e-07   1.29267e-07     -0.432374    0.00100221   0.000986891
+#1352.19      6.75102e+07   0   7.53289e-09      0.199222   8.19194e-07   4.21867e-07   2.89474e-07     -0.379900    0.00116971    0.00110524
+#1138.09      4.47885e+07  -1   2.78783e-09      0.187935   6.09832e-07   7.51988e-07   5.97294e-07   -0.00637951    0.00140295    0.00122642
+#1096.37      1.97244e+07  -2   2.87777e-06      0.204676   2.44461e-07   7.10065e-07   5.83567e-07       1.48034    0.00454897    0.00387416
+#1072.78      1.262e+07    -1   2.54525e-06      0.212664   2.11425e-07   7.15840e-07   5.36918e-07      0.936711    0.00629598    0.00762971
+#1068.29      4.61744e+06  -2   3.82993e-06      0.255286   1.04208e-07   6.76947e-07   4.98853e-07       1.13614    0.00708190    0.00829101
+#1062.97      1.50904e+07  -3   4.14519e-06      0.302401   1.37571e-07   6.57805e-07   4.58986e-07       1.08840    0.00686676    0.00865546
+#1062.42      841128       -4   3.91214e-06      0.276452   1.49151e-07   6.58327e-07   4.64252e-07       1.09857    0.00692410    0.00857118
+#1062.41      355413       -5   3.91495e-06      0.278564   1.49382e-07   6.58466e-07   4.63329e-07       1.09680    0.00690972    0.00858607
+#1062.41      637.885      -6   3.91433e-06      0.278539   1.49336e-07   6.58453e-07   4.63501e-07       1.09717    0.00691229    0.00858347
 #==========================================================================================
 # Variances and Principal Axes
-#                18       19       22       28      127m1soft1:1m1soft1:2m1soft2:2  
-# 2.6170E-16| -0.0199  -0.0000  -0.8895  -0.4175  -0.1847  -0.0000  -0.0000  -0.0000  
-# 9.5860E-16|  0.0064  -0.0000   0.2453  -0.7785   0.5777   0.0000  -0.0000   0.0000  
-# 2.1355E-15| -0.0119   0.0000  -0.3848   0.4687   0.7950  -0.0000   0.0000   0.0000  
-# 2.1281E-13|  0.9997  -0.0000  -0.0239   0.0023   0.0021   0.0000   0.0000   0.0000  
-# 1.2667E-06|  0.0000   0.0032  -0.0000   0.0000   0.0000   0.0031  -0.9999  -0.0131  
-# 9.4245E-07|  0.0000   0.0019  -0.0000   0.0000   0.0000   0.0017   0.0131  -0.9999  
-# 8.5243E-04| -0.0000  -0.9989   0.0000   0.0000   0.0000  -0.0465  -0.0033  -0.0020  
-# 1.5606E-02|  0.0000   0.0465   0.0000  -0.0000  -0.0000  -0.9989  -0.0029  -0.0016  
+#                18       19       22       28      127m1soft1:2m1soft1:3m1soft2:3  
+# 2.5793E-16| -0.0194  -0.0000  -0.8911  -0.4143  -0.1841  -0.0000  -0.0000  -0.0000  
+# 9.5879E-16|  0.0060  -0.0000   0.2423  -0.7787   0.5787   0.0000  -0.0000   0.0000  
+# 2.1480E-15| -0.0109   0.0000  -0.3829   0.4712   0.7945  -0.0000   0.0000   0.0000  
+# 2.0990E-13|  0.9997  -0.0000  -0.0230   0.0018   0.0016   0.0000   0.0001   0.0000  
+# 1.1501E-06| -0.0001  -0.0025   0.0000  -0.0000   0.0000  -0.0019   1.0000  -0.0078  
+# 2.6693E-06|  0.0000   0.0033  -0.0000   0.0000   0.0000   0.0028  -0.0078  -1.0000  
+# 9.6653E-04| -0.0000  -0.9981   0.0000   0.0000   0.0000  -0.0617  -0.0027  -0.0034  
+# 1.2358E-02| -0.0000  -0.0617  -0.0000   0.0000   0.0000   0.9981   0.0018   0.0026  
 #------------------------------------------------------------------------------------------
 #
 #================================================================================================
 #  Covariance Matrix
 #        1           2           3           4           5           6           7           8   
-#   3.996e-13   1.261e-08  -9.544e-15  -4.578e-15  -5.761e-15  -1.798e-08  -6.841e-11  -1.947e-11
-#   1.261e-08   8.835e-04  -3.756e-10  -4.329e-10  -4.215e-10  -6.766e-04   7.123e-07   5.132e-07
-#  -9.544e-15  -3.756e-10   1.079e-15  -5.131e-16  -5.045e-16  -1.498e-09  -3.513e-12  -2.304e-12
-#  -4.578e-15  -4.329e-10  -5.131e-16   2.808e-15   7.554e-16   1.499e-09  -3.901e-11   1.029e-12
-#  -5.761e-15  -4.215e-10  -5.045e-16   7.554e-16   3.624e-15   1.632e-09   2.575e-12  -3.716e-11
-#  -1.798e-08  -6.766e-04  -1.498e-09   1.499e-09   1.632e-09   1.557e-02   4.561e-05   2.567e-05
-#  -6.841e-11   7.123e-07  -3.513e-12  -3.901e-11   2.575e-12   4.561e-05   1.409e-06   8.457e-08
-#  -1.947e-11   5.132e-07  -2.304e-12   1.029e-12  -3.716e-11   2.567e-05   8.457e-08   9.879e-07
+#   4.077e-13   1.373e-08  -8.924e-15  -5.116e-15  -6.318e-15  -1.869e-08  -6.472e-11  -4.911e-11
+#   1.373e-08   1.010e-03  -4.008e-10  -4.882e-10  -4.960e-10  -7.018e-04   1.193e-06   1.274e-06
+#  -8.924e-15  -4.008e-10   1.126e-15  -5.749e-16  -5.568e-16  -1.537e-09  -2.928e-12  -4.589e-12
+#  -5.116e-15  -4.882e-10  -5.749e-16   3.217e-15   8.518e-16   1.937e-09  -4.118e-11   3.279e-12
+#  -6.318e-15  -4.960e-10  -5.568e-16   8.518e-16   4.905e-15   1.880e-09   2.228e-12  -8.237e-11
+#  -1.869e-08  -7.018e-04  -1.537e-09   1.937e-09   1.880e-09   1.231e-02   2.225e-05   3.251e-05
+#  -6.472e-11   1.193e-06  -2.928e-12  -4.118e-11   2.228e-12   2.225e-05   1.197e-06   7.858e-08
+#  -4.911e-11   1.274e-06  -4.589e-12   3.279e-12  -8.237e-11   3.251e-05   7.858e-08   2.765e-06
 #------------------------------------------------------------------------------------------------
 #
 #========================================================================
@@ -624,17 +632,17 @@
 #  15    7   apec       kT         keV      8.00000E-02  frozen
 #  16    7   apec       Abundanc            1.00000      frozen
 #  17    7   apec       Redshift            0.0          frozen
-#  18    7   apec       norm                4.04750E-06  +/-  6.32125E-07  
-#  19    8   apec       kT         keV      0.276752     +/-  2.97233E-02  
+#  18    7   apec       norm                3.91433E-06  +/-  6.38479E-07  
+#  19    8   apec       kT         keV      0.278539     +/-  3.17799E-02  
 #  20    8   apec       Abundanc            1.00000      frozen
 #  21    8   apec       Redshift            0.0          frozen
-#  22    8   apec       norm                1.57433E-07  +/-  3.28460E-08  
+#  22    8   apec       norm                1.49336E-07  +/-  3.35572E-08  
 #  23    9   apec       kT         keV      0.800000     frozen
 #  24    9   apec       Abundanc            1.00000      frozen
 #  25    9   apec       Redshift            0.0          frozen
 #  26    9   apec       norm                0.0          frozen
 #  27   10   powerlaw   PhoIndex            1.41000      frozen
-#  28   10   powerlaw   norm                6.79010E-07  +/-  5.29940E-08  
+#  28   10   powerlaw   norm                6.58453E-07  +/-  5.67164E-08  
 #  29   11   apec       kT         keV      5.00000      frozen
 #  30   11   apec       Abundanc            0.200000     frozen
 #  31   11   apec       Redshift            0.225000     frozen
@@ -658,17 +666,17 @@
 #  48    7   apec       kT         keV      8.00000E-02  = 15
 #  49    7   apec       Abundanc            1.00000      = 16
 #  50    7   apec       Redshift            0.0          = 17
-#  51    7   apec       norm                4.04750E-06  = 18
-#  52    8   apec       kT         keV      0.276752     = 19
+#  51    7   apec       norm                3.91433E-06  = 18
+#  52    8   apec       kT         keV      0.278539     = 19
 #  53    8   apec       Abundanc            1.00000      = 20
 #  54    8   apec       Redshift            0.0          = 21
-#  55    8   apec       norm                1.57433E-07  = 22
+#  55    8   apec       norm                1.49336E-07  = 22
 #  56    9   apec       kT         keV      0.800000     = 23
 #  57    9   apec       Abundanc            1.00000      = 24
 #  58    9   apec       Redshift            0.0          = 25
 #  59    9   apec       norm                0.0          = 26
 #  60   10   powerlaw   PhoIndex            1.41000      = 27
-#  61   10   powerlaw   norm                6.79010E-07  = 28
+#  61   10   powerlaw   norm                6.58453E-07  = 28
 #  62   11   apec       kT         keV      5.00000      = 29
 #  63   11   apec       Abundanc            0.200000     = 30
 #  64   11   apec       Redshift            0.225000     = 31
@@ -692,17 +700,17 @@
 #  81    7   apec       kT         keV      8.00000E-02  = 15
 #  82    7   apec       Abundanc            1.00000      = 16
 #  83    7   apec       Redshift            0.0          = 17
-#  84    7   apec       norm                4.04750E-06  = 18
-#  85    8   apec       kT         keV      0.276752     = 19
+#  84    7   apec       norm                3.91433E-06  = 18
+#  85    8   apec       kT         keV      0.278539     = 19
 #  86    8   apec       Abundanc            1.00000      = 20
 #  87    8   apec       Redshift            0.0          = 21
-#  88    8   apec       norm                1.57433E-07  = 22
+#  88    8   apec       norm                1.49336E-07  = 22
 #  89    9   apec       kT         keV      0.800000     = 23
 #  90    9   apec       Abundanc            1.00000      = 24
 #  91    9   apec       Redshift            0.0          = 25
 #  92    9   apec       norm                0.0          = 26
 #  93   10   powerlaw   PhoIndex            1.41000      = 27
-#  94   10   powerlaw   norm                6.79010E-07  = 28
+#  94   10   powerlaw   norm                6.58453E-07  = 28
 #  95   11   apec       kT         keV      5.00000      = 29
 #  96   11   apec       Abundanc            0.200000     = 30
 #  97   11   apec       Redshift            0.225000     = 31
@@ -726,17 +734,17 @@
 # 114    7   apec       kT         keV      8.00000E-02  = 15
 # 115    7   apec       Abundanc            1.00000      = 16
 # 116    7   apec       Redshift            0.0          = 17
-# 117    7   apec       norm                4.04750E-06  = 18
-# 118    8   apec       kT         keV      0.276752     = 19
+# 117    7   apec       norm                3.91433E-06  = 18
+# 118    8   apec       kT         keV      0.278539     = 19
 # 119    8   apec       Abundanc            1.00000      = 20
 # 120    8   apec       Redshift            0.0          = 21
-# 121    8   apec       norm                1.57433E-07  = 22
+# 121    8   apec       norm                1.49336E-07  = 22
 # 122    9   apec       kT         keV      0.800000     = 23
 # 123    9   apec       Abundanc            1.00000      = 24
 # 124    9   apec       Redshift            0.0          = 25
 # 125    9   apec       norm                0.0          = 26
 # 126   10   powerlaw   PhoIndex            1.41000      = 27
-# 127   10   powerlaw   norm                5.77874E-07  +/-  6.01992E-08  
+# 127   10   powerlaw   norm                4.63501E-07  +/-  7.00391E-08  
 # 128   11   apec       kT         keV      5.00000      = 29
 # 129   11   apec       Abundanc            0.200000     = 30
 # 130   11   apec       Redshift            0.225000     = 31
@@ -760,17 +768,17 @@
 # 147    7   apec       kT         keV      8.00000E-02  = 15
 # 148    7   apec       Abundanc            1.00000      = 16
 # 149    7   apec       Redshift            0.0          = 17
-# 150    7   apec       norm                4.04750E-06  = 18
-# 151    8   apec       kT         keV      0.276752     = 19
+# 150    7   apec       norm                3.91433E-06  = 18
+# 151    8   apec       kT         keV      0.278539     = 19
 # 152    8   apec       Abundanc            1.00000      = 20
 # 153    8   apec       Redshift            0.0          = 21
-# 154    8   apec       norm                1.57433E-07  = 22
+# 154    8   apec       norm                1.49336E-07  = 22
 # 155    9   apec       kT         keV      0.800000     = 23
 # 156    9   apec       Abundanc            1.00000      = 24
 # 157    9   apec       Redshift            0.0          = 25
 # 158    9   apec       norm                0.0          = 26
 # 159   10   powerlaw   PhoIndex            1.41000      = 27
-# 160   10   powerlaw   norm                5.77874E-07  = 127
+# 160   10   powerlaw   norm                4.63501E-07  = 127
 # 161   11   apec       kT         keV      5.00000      = 29
 # 162   11   apec       Abundanc            0.200000     = 30
 # 163   11   apec       Redshift            0.225000     = 31
@@ -794,17 +802,17 @@
 # 180    7   apec       kT         keV      8.00000E-02  = 15
 # 181    7   apec       Abundanc            1.00000      = 16
 # 182    7   apec       Redshift            0.0          = 17
-# 183    7   apec       norm                4.04750E-06  = 18
-# 184    8   apec       kT         keV      0.276752     = 19
+# 183    7   apec       norm                3.91433E-06  = 18
+# 184    8   apec       kT         keV      0.278539     = 19
 # 185    8   apec       Abundanc            1.00000      = 20
 # 186    8   apec       Redshift            0.0          = 21
-# 187    8   apec       norm                1.57433E-07  = 22
+# 187    8   apec       norm                1.49336E-07  = 22
 # 188    9   apec       kT         keV      0.800000     = 23
 # 189    9   apec       Abundanc            1.00000      = 24
 # 190    9   apec       Redshift            0.0          = 25
 # 191    9   apec       norm                0.0          = 26
 # 192   10   powerlaw   PhoIndex            1.41000      = 27
-# 193   10   powerlaw   norm                5.77874E-07  = 127
+# 193   10   powerlaw   norm                4.63501E-07  = 127
 # 194   11   apec       kT         keV      5.00000      = 29
 # 195   11   apec       Abundanc            0.200000     = 30
 # 196   11   apec       Redshift            0.225000     = 31
@@ -814,90 +822,96 @@
 #
 #
 #========================================================================
-#Model m1soft1:powerlaw<1> Source No.: 2   Active/On
+#Model m1soft1:constant<1>*powerlaw<2> Source No.: 2   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 1
-#   1    1   powerlaw   PhoIndex            1.01634      +/-  0.124798     
-#   2    1   powerlaw   norm                7.21444E-03  +/-  1.18691E-03  
+#   1    1   constant   factor              1.00000      frozen
+#   2    2   powerlaw   PhoIndex            1.09717      +/-  0.110969     
+#   3    2   powerlaw   norm                6.91229E-03  +/-  1.09393E-03  
 #________________________________________________________________________
 #
 #
 #========================================================================
-#Model m1soft2:powerlaw<1> Source No.: 5   Active/On
+#Model m1soft2:constant<1>*powerlaw<2> Source No.: 5   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 4
-#   1    1   powerlaw   PhoIndex            1.01634      = m1soft1:1
-#   2    1   powerlaw   norm                3.75923E-03  +/-  9.93947E-04  
+#   1    1   constant   factor              0.492910     frozen
+#   2    2   powerlaw   PhoIndex            1.09717      = m1soft1:2
+#   3    2   powerlaw   norm                8.58347E-03  +/-  1.66288E-03  
 #________________________________________________________________________
 #
 #
 #========================================================================
-#Model m2soft1:powerlaw<1> Source No.: 3   Active/On
+#Model m2soft1:constant<1>*powerlaw<2> Source No.: 3   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 2
-#   1    1   powerlaw   PhoIndex            1.01634      = m1soft1:1
-#   2    1   powerlaw   norm                7.21444E-03  = m1soft1:2
+#   1    1   constant   factor              1.30577      frozen
+#   2    2   powerlaw   PhoIndex            1.09717      = m1soft1:2
+#   3    2   powerlaw   norm                6.91229E-03  = m1soft1:3
 #________________________________________________________________________
 #
 #
 #========================================================================
-#Model m2soft2:powerlaw<1> Source No.: 6   Active/On
+#Model m2soft2:constant<1>*powerlaw<2> Source No.: 6   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 5
-#   1    1   powerlaw   PhoIndex            1.01634      = m1soft1:1
-#   2    1   powerlaw   norm                3.75923E-03  = m1soft2:2
+#   1    1   constant   factor              1.03709      frozen
+#   2    2   powerlaw   PhoIndex            1.09717      = m1soft1:2
+#   3    2   powerlaw   norm                8.58347E-03  = m1soft2:3
 #________________________________________________________________________
 #
 #
 #========================================================================
-#Model pnsoft1:powerlaw<1> Source No.: 4   Active/On
+#Model pnsoft1:constant<1>*powerlaw<2> Source No.: 4   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 3
-#   1    1   powerlaw   PhoIndex            1.01634      = m1soft1:1
-#   2    1   powerlaw   norm                7.21444E-03  = m1soft1:2
+#   1    1   constant   factor              1.34652      frozen
+#   2    2   powerlaw   PhoIndex            1.09717      = m1soft1:2
+#   3    2   powerlaw   norm                6.91229E-03  = m1soft1:3
 #________________________________________________________________________
 #
 #
 #========================================================================
-#Model pnsoft2:powerlaw<1> Source No.: 7   Active/On
+#Model pnsoft2:constant<1>*powerlaw<2> Source No.: 7   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 6
-#   1    1   powerlaw   PhoIndex            1.01634      = m1soft1:1
-#   2    1   powerlaw   norm                3.75923E-03  = m1soft2:2
+#   1    1   constant   factor              0.939360     frozen
+#   2    2   powerlaw   PhoIndex            1.09717      = m1soft1:2
+#   3    2   powerlaw   norm                8.58347E-03  = m1soft2:3
 #________________________________________________________________________
 #
 #
-#Fit statistic : Chi-Squared =        1075.16 using 986 PHA bins.
+#Fit statistic : Chi-Squared =        1062.41 using 986 PHA bins.
 #
-#Test statistic : Chi-Squared =        1075.16 using 986 PHA bins.
-# Reduced chi-squared =        1.09934 for    978 degrees of freedom 
-# Null hypothesis probability =   1.605879e-02
+#Test statistic : Chi-Squared =        1062.41 using 986 PHA bins.
+# Reduced chi-squared =        1.08631 for    978 degrees of freedom 
+# Null hypothesis probability =   3.065363e-02
 #
 !XSPEC12>error 2.706 18,19,22,28,127;
 # Parameter   Confidence Range (2.706)
-#    18   2.4084e-06  5.08599e-06    (-1.63904e-06,1.03855e-06)
-#    19     0.219714      0.33714    (-0.0570357,0.0603902)
-#    22   1.0318e-07  2.42474e-07    (-5.42478e-08,8.50456e-08)
-#    28  5.91432e-07  7.66267e-07    (-8.75977e-08,8.72369e-08)
-#   127  4.80039e-07  6.74902e-07    (-9.78145e-08,9.70481e-08)
-#
-!XSPEC12>error 2.706 m1soft1:1;
-# Parameter   Confidence Range (2.706)
-#     1     0.811073      1.23843    (-0.205328,0.22203)
+#    18  2.27924e-06  4.96212e-06    (-1.6352e-06,1.04767e-06)
+#    19     0.218261     0.344182    (-0.0602822,0.0656386)
+#    22  9.39764e-08  2.33395e-07    (-5.53682e-08,8.40503e-08)
+#    28  5.63262e-07   7.5357e-07    (-9.51956e-08,9.51129e-08)
+#   127   3.5051e-07  5.75714e-07    (-1.12957e-07,1.12247e-07)
 #
 !XSPEC12>error 2.706 m1soft1:2;
 # Parameter   Confidence Range (2.706)
-#     2   0.00530076   0.00914337    (-0.00191338,0.00192922)
+#     2     0.919786      1.29464    (-0.17733,0.197523)
 #
-!XSPEC12>error 2.706 m1soft2:2;
+!XSPEC12>error 2.706 m1soft1:3;
 # Parameter   Confidence Range (2.706)
-#     2     0.002121   0.00545786    (-0.00163902,0.00169784)
+#     3   0.00514159   0.00868988    (-0.00177025,0.00177804)
+#
+!XSPEC12>error 2.706 m1soft2:3;
+# Parameter   Confidence Range (2.706)
+#     3   0.00577793    0.0114076    (-0.00280602,0.00282362)
 #
 !XSPEC12>sho fre;
 #
@@ -909,58 +923,58 @@
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 1
-#  18    7   apec       norm                4.04743E-06  +/-  6.32125E-07  
-#  19    8   apec       kT         keV      0.276749     +/-  2.97233E-02  
-#  22    8   apec       norm                1.57427E-07  +/-  3.28460E-08  
-#  28   10   powerlaw   norm                6.79032E-07  +/-  5.29940E-08  
+#  18    7   apec       norm                3.91442E-06  +/-  6.38479E-07  
+#  19    8   apec       kT         keV      0.278542     +/-  3.17799E-02  
+#  22    8   apec       norm                1.49343E-07  +/-  3.35572E-08  
+#  28   10   powerlaw   norm                6.58457E-07  +/-  5.67164E-08  
 #                           Data group: 2
 #                           Data group: 3
 #                           Data group: 4
-# 127   10   powerlaw   norm                5.77853E-07  +/-  6.01992E-08  
+# 127   10   powerlaw   norm                4.63472E-07  +/-  7.00391E-08  
 #                           Data group: 5
 #                           Data group: 6
 #________________________________________________________________________
 #
 #========================================================================
-#Model m1soft1:powerlaw<1> Source No.: 2   Active/On
+#Model m1soft1:constant<1>*powerlaw<2> Source No.: 2   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 1
-#   1    1   powerlaw   PhoIndex            1.01640      +/-  0.124798     
-#   2    1   powerlaw   norm                7.21414E-03  +/-  1.18691E-03  
+#   2    2   powerlaw   PhoIndex            1.09711      +/-  0.110969     
+#   3    2   powerlaw   norm                6.91185E-03  +/-  1.09393E-03  
 #________________________________________________________________________
 #
 #========================================================================
-#Model m1soft2:powerlaw<1> Source No.: 5   Active/On
+#Model m1soft2:constant<1>*powerlaw<2> Source No.: 5   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 4
-#   2    1   powerlaw   norm                3.76002E-03  +/-  9.93947E-04  
+#   3    2   powerlaw   norm                8.58395E-03  +/-  1.66288E-03  
 #________________________________________________________________________
 #
 #========================================================================
-#Model m2soft1:powerlaw<1> Source No.: 3   Active/On
+#Model m2soft1:constant<1>*powerlaw<2> Source No.: 3   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 2
 #________________________________________________________________________
 #
 #========================================================================
-#Model m2soft2:powerlaw<1> Source No.: 6   Active/On
+#Model m2soft2:constant<1>*powerlaw<2> Source No.: 6   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 5
 #________________________________________________________________________
 #
 #========================================================================
-#Model pnsoft1:powerlaw<1> Source No.: 4   Active/On
+#Model pnsoft1:constant<1>*powerlaw<2> Source No.: 4   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 3
 #________________________________________________________________________
 #
 #========================================================================
-#Model pnsoft2:powerlaw<1> Source No.: 7   Active/On
+#Model pnsoft2:constant<1>*powerlaw<2> Source No.: 7   Active/On
 #Model Model Component  Parameter  Unit     Value
 # par  comp
 #                           Data group: 6
