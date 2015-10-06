@@ -12,6 +12,11 @@ data 2:2 ../0502020201/analysis/mos2S002-obj-fil-grp30.pi
 data 3:3 ../0502020101/analysis/mos1S001-obj-fil-grp30.pi
 data 4:4 ../0502020101/analysis/mos2S002-obj-fil-grp30.pi
 
+resp 2:1 mos1-diag.rsp.gz
+resp 3:2 mos2-diag.rsp.gz
+resp 4:3 mos1-diag.rsp.gz
+resp 5:4 mos2-diag.rsp.gz
+
 ig 1-4:**-0.5,7.0-**
 ig 1-4:1.2-1.9
 ig bad
@@ -23,12 +28,12 @@ model const*const*(apec+(apec+pow+apec)*phabs)
 1.0                -0.01          0          0          5          5
 0.0                -0.01          0          0          2          2
 8.16879E-07       -0.001          0          0      1e+24      1e+24
-0.234440           -0.01      0.008      0.008         64         64
+0.259118           -0.01      0.008      0.008         64         64
 1.0                -0.01          0          0          5          5
 0.0                -0.01          0          0          2          2
-3.57862E-07        -0.01          0          0      1e+24      1e+24
+4.35584E-07        -0.01          0          0      1e+24      1e+24
 1.41               -0.01         -3         -2          9         10
-1.10975E-06        -0.01          0          0      1e+24      1e+24
+8.87690E-07        -0.01          0          0      1e+24      1e+24
 1.0                 0.01      0.008      0.008         64         64
 0.2                -0.01          0          0          5          5
 0.21               -0.01          0          0          2          2
@@ -85,6 +90,22 @@ model const*const*(apec+(apec+pow+apec)*phabs)
 =15
 =16
 =17
+
+mo 2:m1sp1 pow
+1.0                0.01         -3         -2          9         10
+1E-03              0.01          0          0      1e+24      1e+24
+
+mo 3:m2sp1 pow
+= m1sp1:1
+= 0.99100 * m1sp1:2
+
+mo 4:m1sp2 pow
+= m1sp1:1
+1E-03              0.01          0          0      1e+24      1e+24
+
+mo 5:m2sp2 pow
+= m1sp1:1
+= 0.96826 * m1sp2:2
 
 renorm
 fit 1000 1e-2
