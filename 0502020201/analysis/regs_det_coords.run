@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Aim point coords.
+esky2det datastyle='user' outunit='det' calinfoset="mos1S001-clean.fits" \
+    instrument=EMOS1 ra=24.4287 dec=-12.87
+esky2det datastyle='user' outunit='det' calinfoset="mos2S002-clean.fits" \
+    instrument=EMOS2 ra=24.4287 dec=-12.87
+esky2det datastyle='user' outunit='det' calinfoset="pnS003-clean.fits" \
+    instrument=EPN ra=24.4287 dec=-12.87
+
+# A222 center
+esky2det datastyle='user' outunit='det' calinfoset="mos1S001-clean.fits" \
+    instrument=EMOS1 ra=24.386525 dec=-12.991853
+esky2det datastyle='user' outunit='det' calinfoset="mos2S002-clean.fits" \
+    instrument=EMOS2 ra=24.386525 dec=-12.991853
+esky2det datastyle='user' outunit='det' calinfoset="pnS003-clean.fits" \
+    instrument=EPN ra=24.386525 dec=-12.991853
+
+# A223 center
+esky2det datastyle='user' outunit='det' calinfoset="mos1S001-clean.fits" \
+    instrument=EMOS1 ra=24.480904 dec=-12.81885
+esky2det datastyle='user' outunit='det' calinfoset="mos2S002-clean.fits" \
+    instrument=EMOS2 ra=24.480904 dec=-12.81885
+esky2det datastyle='user' outunit='det' calinfoset="pnS003-clean.fits" \
+    instrument=EPN ra=24.480904 dec=-12.81885
+
+# filament x0,y0 box
+# (RA,DEC) in box(24.432681,-12.912731,250.,75.,28.)
+esky2det datastyle='user' outunit='det' calinfoset="mos1S001-clean.fits" \
+    instrument=EMOS1 ra=24.432681 dec=-12.912731
+esky2det datastyle='user' outunit='det' calinfoset="mos2S002-clean.fits" \
+    instrument=EMOS2 ra=24.432681 dec=-12.912731
+esky2det datastyle='user' outunit='det' calinfoset="pnS003-clean.fits" \
+    instrument=EPN ra=24.432681 dec=-12.912731
+
+

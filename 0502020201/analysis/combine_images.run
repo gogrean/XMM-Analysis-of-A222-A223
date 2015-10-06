@@ -1,0 +1,8 @@
+#!/bin/bash
+
+esascaldb=/Users/gogrean/astrosoft/xmmsas_20141104_1833/caldb/esas
+
+comb caldb=$esascaldb withpartcontrol=1 withsoftcontrol=0 \
+    withswcxcontrol=0 elowlist=500 ehighlist=7000 \
+    mask=0 prefixlist="1S001 2S002 S003"
+

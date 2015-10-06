@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cheese prefixm="1S001 2S002" prefixp="S003" scale=0.25 rate=0.05 \
+    dist=3.0 elow=500 ehigh=7000 clobber=yes
+

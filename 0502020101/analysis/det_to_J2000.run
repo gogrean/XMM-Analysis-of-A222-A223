@@ -1,0 +1,14 @@
+#!/bin/bash
+
+function calc () {
+ awk "BEGIN { print $* ; }"
+}
+
+while read line
+do
+  A=( $line )
+  B=( `ecoordconv imageset='mos1S001-obj-image-det.fits' withcoords=yes x=${A[0]} y=${A[1]} coordtype=det | grep "RA: DEC:" | sed -n 's/^.*RA: DEC: //p'` )
+  printf '%f %f %f \n' ${B[0]} ${B[1]} `calc "${A[2]}*0.05+2.0"`
+done < ../../0502020201/analysis/mos1S001_src_det.list
+
+

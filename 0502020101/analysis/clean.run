@@ -1,0 +1,7 @@
+#!/bin/bash
+
+epchain
+epchain withoutoftime=true
+emchain
+pn-filter
+mos-filter

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+esascaldb=/Users/gogrean/astrosoft/xmmsas_20141104_1833/caldb/esas
+
+#backscale spectrumset='mos1S001-obj-bkg.pi' withbadpixcorr=no
+#backscale spectrumset='mos2S002-obj-bkg.pi' withbadpixcorr=no
+#backscale spectrumset='pnS003-obj-bkg.pi' withbadpixcorr=no
+
+proton_scale caldb=$esascaldb mode=1 detector=1 \
+    maskfile='mos1S001-sp-bkg.fits' specfile='mos1S001-obj-bkg.pi'
+proton_scale caldb=$esascaldb mode=1 detector=2 \
+    maskfile='mos2S002-sp-bkg.fits' specfile='mos2S002-obj-bkg.pi'
+proton_scale caldb=$esascaldb mode=1 detector=3 \
+    maskfile='pnS003-sp-bkg.fits' specfile='pnS003-obj-bkg.pi'
+
+#backscale spectrumset='mos1S001-obj-bkg.pi' withbadpixcorr=yes \
+#    badpixlocation='mos1S001-clean.fits'
+#backscale spectrumset='mos2S002-obj-bkg.pi' withbadpixcorr=yes \
+#    badpixlocation='mos2S002-clean.fits'
+#backscale spectrumset='pnS003-obj-bkg.pi' withbadpixcorr=yes \
+#    badpixlocation='pnS003-clean.fits'
+
+

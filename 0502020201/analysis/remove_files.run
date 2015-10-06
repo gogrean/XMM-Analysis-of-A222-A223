@@ -1,0 +1,49 @@
+#!/bin/bash
+
+rm -f mos1S001-obj-im.fits
+rm -f mos1S001-exp-im.fits
+rm -f mos1S001-corn.fits
+rm -f mos1S001-obj.pi
+rm -f mos1S001-back.pi
+rm -f mos1S001-obj-im-sp-det.fits
+rm -f mos1S001.rmf
+rm -f mos1S001.arf
+rm -f mos1S001-?ff.pi
+rm -f mos1S001-?fc.pi
+rm -f mos1S001-?oc.pi
+rm -f mos1S001-?obj.pi
+
+rm -f mos2S002-obj-im.fits
+rm -f mos2S002-exp-im.fits
+rm -f mos2S002-corn.fits
+rm -f mos2S002-obj.pi
+rm -f mos2S002-back.pi
+rm -f mos2S002-obj-im-sp-det.fits
+rm -f mos2S002.rmf
+rm -f mos2S002.arf
+rm -f mos2S002-?ff.pi
+rm -f mos2S002-?fc.pi
+rm -f mos2S002-?oc.pi
+rm -f mos2S002-?obj.pi
+
+rm -f pnS003-corn.fits
+rm -f pnS003-corn-oot.fits
+rm -f pnS003-obj-im.fits
+rm -f pnS003-exp-im.fits
+rm -f pnS003-obj-im-oot.fits
+rm -f pnS003-obj.pi
+rm -f pnS003-obj-oot.pi
+rm -f pnS003-obj-os.pi
+rm -f pnS003-back.pi
+rm -f pnS003-obj-im-sp-det.fits
+rm -f pnS003.rmf
+rm -f pnS003.arf
+rm -f pnS003-?ff.pi
+rm -f pnS003-?fc.pi
+rm -f pnS003-?oc.pi
+rm -f pnS003-?obj.pi
+rm -f pnS003-?ff-oot.pi
+rm -f pnS003-?fc-oot.pi
+rm -f pnS003-?oc-oot.pi
+rm -f pnS003-?obj-oot.pi
+

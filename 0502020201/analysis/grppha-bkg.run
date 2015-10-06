@@ -1,0 +1,12 @@
+#!/bin/bash
+
+grppha infile='mos1S001-obj-bkg.pi' outfile='!mos1S001-obj-bkg-grp30.pi' chatter=0 \
+  comm='chkey BACKFILE ../0502020201/analysis/mos1S001-back-bkg.pi & chkey RESPFILE ../0502020201/analysis/mos1S001-bkg.rmf & chkey ANCRFILE ../0502020201/analysis/mos1S001-bkg.arf & group min 30 & exit'
+
+grppha infile='mos2S002-obj-bkg.pi' outfile='!mos2S002-obj-bkg-grp30.pi' chatter=0 \
+  comm='chkey BACKFILE ../0502020201/analysis/mos2S002-back-bkg.pi & chkey RESPFILE ../0502020201/analysis/mos2S002-bkg.rmf & chkey ANCRFILE ../0502020201/analysis/mos2S002-bkg.arf & group min 30 & exit'
+
+grppha infile='pnS003-obj-os-bkg.pi' outfile='!pnS003-obj-os-bkg-grp30.pi' chatter=0 \
+  comm='chkey BACKFILE ../0502020201/analysis/pnS003-back-bkg.pi & chkey RESPFILE ../0502020201/analysis/pnS003-bkg.rmf & chkey ANCRFILE ../0502020201/analysis/pnS003-bkg.arf & group min 30 & exit'
+
+

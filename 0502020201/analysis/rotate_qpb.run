@@ -1,0 +1,8 @@
+#!/bin/bash
+
+esascaldb=/Users/gogrean/astrosoft/xmmsas_20141104_1833/caldb/esas
+
+rot-im-det-sky prefix=1S001 mask=0 elow=500 ehigh=7000 mode=1
+rot-im-det-sky prefix=2S002 mask=0 elow=500 ehigh=7000 mode=1
+rot-im-det-sky prefix=S003 mask=0 elow=500 ehigh=7000 mode=1
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+function calc () {
+ awk "BEGIN { print $* ; }"
+}
+
+while read line
+do
+  A=( $line )
+  B=( `esky2det datastyle='user' outunit='det' calinfoset="mos2S002-clean.fits" instrument=EMOS2 ra=${A[0]} dec=${A[1]} | grep -A1 "# detX       detY" | sed -n 2p` )
+  printf '&&!((DETX,DETY) in circle(%f,%f,%f))' ${B[0]} ${B[1]} `calc "${A[2]}/0.05"`
+done < mos2S002_src_J2000.list
+
+

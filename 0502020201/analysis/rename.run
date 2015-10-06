@@ -1,0 +1,28 @@
+#!/bin/bash
+
+mv -f mos1S001-obj.pi mos1S001-obj-$1.pi
+mv -f mos1S001-back.pi mos1S001-back-$1.pi
+mv -f mos1S001.rmf mos1S001-$1.rmf
+mv -f mos1S001.arf mos1S001-$1.arf
+mv -f mos1S001-obj-im-sp-det.fits mos1S001-sp-$1.fits
+mv -f mos1S001-aug.qdp mos1S001-aug-$1.qdp
+mv -f mos1S001-spec.qdp mos1S001-spec-$1.qdp
+
+mv -f mos2S002-obj.pi mos2S002-obj-$1.pi
+mv -f mos2S002-back.pi mos2S002-back-$1.pi
+mv -f mos2S002.rmf mos2S002-$1.rmf
+mv -f mos2S002.arf mos2S002-$1.arf
+mv -f mos2S002-obj-im-sp-det.fits mos2S002-sp-$1.fits
+mv -f mos2S002-aug.qdp mos2S002-aug-$1.qdp
+mv -f mos2S002-spec.qdp mos2S002-spec-$1.qdp
+
+mv -f pnS003-obj.pi pnS003-obj-$1.pi
+mv -f pnS003-back.pi pnS003-back-$1.pi
+mv -f pnS003.rmf pnS003-$1.rmf
+mv -f pnS003.arf pnS003-$1.arf
+mv -f pnS003-obj-im-sp-det.fits pnS003-sp-$1.fits
+mv -f pnS003-obj-os.pi pnS003-obj-os-$1.pi
+mv -f pnS003-aug.qdp pnS003-aug-$1.qdp
+mv -f pnS003-spec.qdp pnS003-spec-$1.qdp
+mv -f pnS003-aug-spec.qdp pnS003-aug-spec-$1.qdp
+

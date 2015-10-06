@@ -1,0 +1,19 @@
+#!/bin/bash
+
+esascaldb=/Users/gogrean/astrosoft/xmmsas_20141104_1833/caldb/esas
+
+mos-spectra prefix=1S001 caldb=$esascaldb mask=0 elow=500 ehigh=7000 \
+    ccd1=1 ccd2=1 ccd3=1 ccd4=1 ccd5=1 ccd6=0 ccd7=1
+mos-spectra prefix=2S002 caldb=$esascaldb mask=0 elow=500 ehigh=7000 \
+    ccd1=1 ccd2=1 ccd3=1 ccd4=1 ccd5=1 ccd6=1 ccd7=1
+pn-spectra prefix=S003 caldb=$esascaldb mask=0 elow=500 ehigh=7000 \
+    pattern=4 quad1=1 quad2=1 quad3=1 quad4=1
+
+mos_back prefix=1S001 caldb=$esascaldb diag=0 elow=500 ehigh=7000 \
+    ccd1=1 ccd2=1 ccd3=1 ccd4=1 ccd5=1 ccd6=0 ccd7=1
+mos_back prefix=2S002 caldb=$esascaldb diag=0 elow=500 ehigh=7000 \
+    ccd1=1 ccd2=1 ccd3=1 ccd4=1 ccd5=1 ccd6=1 ccd7=1
+pn_back prefix=S003 caldb=$esascaldb diag=0 elow=500 ehigh=7000 \
+    quad1=1 quad2=1 quad3=1 quad4=1
+
+
