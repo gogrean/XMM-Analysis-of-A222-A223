@@ -1,3 +1,5 @@
+log bkg-spectrum.log
+
 statistic chi
 abund lodd
 method leven 100 0.01
@@ -10,6 +12,11 @@ da 2:2 ../0502020201/analysis/mos2S002-obj-bkg-grp30.pi
 da 3:3 ../0502020101/analysis/mos1S001-obj-bkg-grp30.pi
 da 4:4 ../0502020101/analysis/mos2S002-obj-bkg-grp30.pi
 
+resp 2:1 mos1-diag.rsp.gz
+resp 3:2 mos2-diag.rsp.gz
+resp 4:3 mos1-diag.rsp.gz
+resp 5:4 mos2-diag.rsp.gz
+
 ig 1-4:**-0.5,7.0-**
 ig 1-4:1.2-1.9
 ig bad
@@ -17,10 +24,10 @@ ig bad
 mo const*const*(apec+(apec+pow)*phabs)
 1                  -0.01          0          0          2          2
 111.509            -0.01          0          0      1e+10      1e+10
-0.08              -0.001      0.008      0.008         64         64
+0.132351          -0.001      0.008      0.008         64         64
 1.0                -0.01          0          0          5          5
 0.0                -0.01          0          0          2          2
-8.16879E-07        0.001          0          0      1e+24      1e+24
+8.16879E-07       -0.001          0          0      1e+24      1e+24
 0.2                 0.01      0.008      0.008         64         64
 1.0                -0.01          0          0          5          5
 0.0                -0.01          0          0          2          2
@@ -67,6 +74,22 @@ mo const*const*(apec+(apec+pow)*phabs)
 =11
 =12
 =13
+
+mo 2:m1sp1 pow
+1.0               -0.01         -3         -2          9         10
+0E-03             -0.01          0          0      1e+24      1e+24
+
+mo 3:m2sp1 pow
+= m1sp1:1
+= 1.3287 * m1sp1:2
+
+mo 4:m1sp2 pow
+= m1sp1:1
+0E-03             -0.01          0          0      1e+24      1e+24
+
+mo 5:m2sp2 pow
+= m1sp1:1
+= 2.3673 * m1sp2:2
 
 renorm
 fit 1000 1e-2
