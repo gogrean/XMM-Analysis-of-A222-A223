@@ -1,0 +1,25 @@
+Calculated as obs count rate / bkg count rate in 10-12 keV.
+
+0502020201 bkg
+
+MOS1: 1.05898
+MOS2: 1.08571
+pn: 0.98563
+
+0502020101 bkg
+
+MOS1: 1.02117
+MOS2: 1.06935
+pn: 1.02667
+
+0502020201 fil
+
+MOS1: 1.01985
+MOS2: 1.10850
+pn: 0.83658
+
+0502020101 fil
+
+MOS1: 0.80986
+MOS2: 1.01334
+pn: 0.79219
